@@ -1,7 +1,6 @@
 # Inform things
 Build/
 Index/
-^Source/story.ni
 *.blurb
 *.iFiction
 *.skein

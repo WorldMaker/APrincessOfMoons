@@ -1,0 +1,5 @@
+Chapter - Prelude
+¶
+¶When play begins: say "[The story description][paragraph break]".
+¶
+¶

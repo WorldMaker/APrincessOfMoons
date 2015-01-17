@@ -1,0 +1,5 @@
+archives:
+- {filename: Source\story.ni, handler: i7stanza.I7StanzaHandler}
+vcs_add: git add --
+vcs_remove: delete
+vcs_show_files: git ls-tree -r --name-only HEAD
