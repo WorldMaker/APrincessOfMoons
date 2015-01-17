@@ -1,0 +1,14 @@
+# Inform things
+Build/
+Index/
+^Source/story.ni
+*.blurb
+*.iFiction
+*.skein
+*.plist
+
+# musdex things
+_musdex/.musdex.index.yaml
+
+# Temp things
+*.swp
