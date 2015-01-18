@@ -7,7 +7,8 @@ hope and that such omissions that are intentional hear become as easy to
 ¶
 ¶This work owes a strong debt to a wide range of science fiction that 
 precedes it in spirit. Most directly, of course, this work borrows a lot
- from the short fiction of John Varley.]
+ from the short fiction of John Varley and the Culture series of Iain M.
+ Banks.]
 ¶
 ¶The story description is "All the moons are yours to explore, except 
 Europa. Do not go to Europa, for it is a silly backwards place. Love, 
@@ -15,5 +16,8 @@ Your Parents." [Set the tone of the game with an exhortation that mixes
 2010 (The Year We Made Contact!) and Monty Python.]
 ¶The story genre is "Science Fiction".
 ¶The story creation year is 2015.
+¶
+¶Include Basic Help Menu by Emily Short.
+¶Include Menus by Emily Short.
 ¶
 ¶
