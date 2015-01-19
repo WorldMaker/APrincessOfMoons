@@ -17,6 +17,9 @@ Your Parents." [Set the tone of the game with an exhortation that mixes
 ¶The story genre is "Science Fiction".
 ¶The story creation year is 2015.
 ¶
+¶Use American dialect and the serial comma. [Match my writing style a bit
+ closer.]
+¶
 ¶Include Basic Help Menu by Emily Short.
 ¶Include Menus by Emily Short.
 ¶
