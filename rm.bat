@@ -1,0 +1,3 @@
+@echo off
+del %*
+REM Hacks around python subprocess calling issue...
