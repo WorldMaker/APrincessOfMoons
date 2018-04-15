@@ -19,25 +19,27 @@ import re
 import textwrap
 import yaml
 
-HEADINGS = re.compile(r'^(Volume|Book|Part|Chapter|Section)(\s*\d+)?(.*)', re.IGNORECASE)
+HEADINGS = re.compile(r'^(Volume|Book|Part|Chapter|Section)[\s\-]+(.*)', re.IGNORECASE)
 PILCROW = '¶'
 I7MANIFEST = 'manifest.yaml'
 I7EXT = '.i7x'
 I7FRONTMATTER = 'frontmatter'
 
-_slugify_strip_re = re.compile(r'[^\w\s-]')
-_slugify_hyphenate_re = re.compile(r'[-\s]+')
-def _slugify(value):
+def _slugify(value, allow_unicode=True):
     """
     Normalizes string, converts to lowercase, removes non-alpha characters,
     and converts spaces to hyphens.
     
-    From Django's "django/template/defaultfilters.py".
+    From Django's "django/util/text.py".
     """
     import unicodedata
-    value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore')
-    value = _slugify_strip_re.sub('', value).strip().lower()
-    return _slugify_hyphenate_re.sub('-', value).lstrip('-')
+    value = str(value)
+    if allow_unicode:
+        value = unicodedata.normalize('NFKC', value)
+    else:
+        value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore').decode('ascii')
+    value = re.sub(r'[^\w\s-]', '', value).strip().lower()
+    return re.sub(r'[-\s]+', '-', value)
 
 class I7StanzaHandler:
     def __init__(self, archive, location, manifest={}):
@@ -69,7 +71,9 @@ class I7StanzaHandler:
             m = HEADINGS.match(line)
             if m is not None:
                 out.close()
-                slug = _slugify(m.group(3))
+                title = m.group(2)
+                logging.debug('Extracting: %s' % title)
+                slug = _slugify(title)
                 fname = slug + I7EXT
                 i = 1
                 while fname in files:
