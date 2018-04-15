@@ -35,10 +35,8 @@ def _slugify(value):
     From Django's "django/template/defaultfilters.py".
     """
     import unicodedata
-    if not isinstance(value, unicode):
-        value = unicode(value)
     value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore')
-    value = unicode(_slugify_strip_re.sub('', value).strip().lower())
+    value = _slugify_strip_re.sub('', value).strip().lower()
     return _slugify_hyphenate_re.sub('-', value).lstrip('-')
 
 class I7StanzaHandler:
@@ -62,7 +60,7 @@ class I7StanzaHandler:
         arc = open(self.archive)
         fname = I7FRONTMATTER + I7EXT
         path = os.path.relpath(os.path.join(self.location, fname))
-        out = open(path, 'w')
+        out = open(path, 'w', encoding='utf-8')
         files.append(fname)
         if path in manifestfiles: manifestfiles.remove(path)
         yield (path, datetime.datetime.now())
@@ -78,7 +76,7 @@ class I7StanzaHandler:
                     fname = "%s%s%s" % (slug, i, I7EXT)
                     i += 1
                 path = os.path.relpath(os.path.join(self.location, fname))
-                out = open(path, 'w')
+                out = open(path, 'w', encoding='utf-8')
                 files.append(fname)
                 if path in manifestfiles: manifestfiles.remove(path)
                 yield (path, datetime.datetime.now())
@@ -118,10 +116,10 @@ class I7StanzaHandler:
         manifest = yaml.load(manfile)
         manfile.close()
 
-        out = open(self.archive, 'w')
+        out = open(self.archive, 'w', encoding='utf-8', newline='\n')
 
         for f in manifest:
-            inf = open(os.path.join(self.location, f))
+            inf = open(os.path.join(self.location, f), encoding='utf-8')
             for line in inf:
                 line = line.replace('\n', '')
                 line = re.sub(r'(?<!\\)' + PILCROW, '\n', line)
