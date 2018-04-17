@@ -16,16 +16,16 @@ random]."
 useless. Long dead faces peer out from spots, their meaning and import 
 lost on you."
 ¶
-¶A Personamat is a fixed in place thing in Earthdollars. The description 
-of it is "'Be Your Own Person! Shape Your Persona!' The familiar slogans
- of everyone's favorite brand of self-modification machinery. Enter a 
-Personamat and come out whatever kind of person you are feeling at the 
-time."
+¶The Personamat is a fixed in place thing in Earthdollars. The 
+description of it is "'Be Your Own Person! Shape Your Persona!' The 
+familiar slogans of everyone's favorite brand of self-modification 
+machinery. Enter a Personamat and come out whatever kind of person you 
+are feeling at the time." It is enterable, openable, and closed.
 ¶
 ¶Understand "mat" as Personamat.
 ¶
 ¶A QuickFab is a fixed in place thing in Earthdollars. The description of
- it is "QuickFabs fabricate basic versions of  most of the things you 
+ it is "QuickFabs fabricate basic versions of most of the things you 
 might possibly want."
 ¶
 ¶Understand "fab" as QuickFab.
